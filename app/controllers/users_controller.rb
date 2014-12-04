@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.order(params[:sort])
+    @users = User.order(params[:sort] + ' ' + params[:direction])
   end
 
   def destroy
