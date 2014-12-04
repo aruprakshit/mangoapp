@@ -1,13 +1,11 @@
-<% title "Users" %>
-
 <table>
   <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Email</th>
-    <th>Location</th>
-    <th>Department</th>
-    <th>Designation</th>
+    <th> <%= link_to "Name", :sort => "name" %> </th>
+    <th> <%= link_to "Age", :sort => "age" %> </th>
+    <th> <%= link_to "Email", :sort => "email_id" %> </th>
+    <th> <%= link_to "Location", :sort => "location" %> </th>
+    <th> <%= link_to "Department", :sort => "Department" %> </th>
+    <th> <%= link_to "Designation", :sort => "Designation" %> </th>
   </tr>
   <% @users.each do |user| %>
     <tr>
