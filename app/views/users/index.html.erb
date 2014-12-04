@@ -1,0 +1,19 @@
+<% title "Users" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Email</th>
+    <th>Location</th>
+    <th>Department</th>
+    <th>Designation</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <% [:name, :age, :email_id, :location, :department,:designation].each do |attr| %>
+        <td><%= user.public_send(attr) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
