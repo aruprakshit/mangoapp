@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
 
   def self.search(search)  
     if search  
-      where('name like :search or age like :search or 
-            department like :search or designation like :search or
-            email_id like :search or location like :search',
+      where('name LIKE :search or age LIKE :search or 
+            department LIKE :search or designation LIKE :search or
+            email_id LIKE :search or location LIKE :search',
             {:search => "%#{search}%"})  
     else  
       scoped  
