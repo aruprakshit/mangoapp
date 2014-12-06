@@ -1,0 +1,10 @@
+<%= form_tag list_users_users_path, :method => 'get' do %>
+  <% options = ["age", "location", "department", "designation"].map.with_index(1) do |option, value| %>
+    [option, value]
+  <% end %>
+  <p>
+  <%= select_tag "people", options_for_select(options) %>
+  <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+

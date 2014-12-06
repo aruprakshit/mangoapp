@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  def search
+  def list_users
   end
 
   private
