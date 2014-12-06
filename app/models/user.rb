@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :age, :department, :designation, :email_id, :location, :name
 
+  default_scope where("archive is null")
+
   def self.search(search)
     if search
       where('name LIKE :search or age LIKE :search or 
