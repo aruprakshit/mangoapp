@@ -1,10 +1,10 @@
 <%= form_tag list_users_users_path, :method => 'get' do %>
-  <% options = ["age", "location", "department", "designation"].map.with_index(1) do |option, value| %>
-    <%[option, value]%>
-  <% end %>
   <p>
-  <%= select_tag "people", options_for_select(options) %>
+  <%= select_tag "search_by", options_for_select(@search_by_options) %>
   <%= submit_tag "Submit"%>
   </p>
+<% end %>
+<% @users.each do |grouping_key, users| %>
+  <p> <%= grouping_key %> : <%= users.map(&:name).join("||")%></p>
 <% end %>
 
