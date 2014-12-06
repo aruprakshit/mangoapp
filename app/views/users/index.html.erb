@@ -1,17 +1,10 @@
-<table>
-  <tr>
-    <th> <%= sortable 'name', "Name" %> </th>
-    <th> <%= sortable 'name', "Age" %> </th>
-    <th> <%= sortable 'email_id', "Email" %> </th>
-    <th> <%= sortable 'location', "location" %> </th>
-    <th> <%= sortable 'department', "Department" %> </th>
-    <th> <%= link_to "designation", :sort => "Designation" %> </th>
-  </tr>
-  <% @users.each do |user| %>
-    <tr>
-      <% [:name, :age, :email_id, :location, :department,:designation].each do |attr| %>
-        <td><%= user.public_send(attr) %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+<%= form_tag users_path, :method => 'get' do %>  
+  <%= hidden_field_tag :direction, params[:direction] %>  
+  <%= hidden_field_tag :sort, params[:sort] %>  
+  <p>
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>
+<% end %>
+
+<div id="users"><%= render 'users' %></div> 

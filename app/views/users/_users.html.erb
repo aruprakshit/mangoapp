@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th> <%= sortable 'name', "Name" %> </th>
+    <th> <%= sortable 'name', "Age" %> </th>
+    <th> <%= sortable 'email_id', "Email" %> </th>
+    <th> <%= sortable 'location', "location" %> </th>
+    <th> <%= sortable 'department', "Department" %> </th>
+    <th> <%= sortable "designation", "Designation" %> </th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <% [:name, :age, :email_id, :location, :department,:designation].each do |attr| %>
+        <td><%= user.public_send(attr) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

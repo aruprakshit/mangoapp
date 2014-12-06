@@ -58,7 +58,7 @@ MangoappAssignment::Application.routes.draw do
   
  root to: 'users#index'
 
-  resources :users do
+  resources :users, only: [:index, :destroy] do
     collection do
       get :search
     end
