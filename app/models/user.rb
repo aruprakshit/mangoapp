@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  include Archiver
+  include Archive::Archiver
 
   attr_accessible :age, :department, :designation, :email_id, :location, :name
 
