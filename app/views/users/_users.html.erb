@@ -13,7 +13,10 @@
     <tr>
       <% [:name, :age, :email_id, :location, :department,:designation].each do |attr| %>
         <td><%= user.public_send(attr) %></td>
-      <% end %>
+      <% end %> 
+      <td>
+        <%= link_to "Delete", user_path(user), method: :delete, :data => {:confirm => "Are you sure you want to delete this item?"} %>
+      </td>
     </tr>
   <% end %>
 </table>

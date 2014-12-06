@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
   end
 
   def search
@@ -14,10 +17,10 @@ class UsersController < ApplicationController
   private
 
   def sort_column
-    User.column_names.include?(params[:sort]) ? params[:sort] : "name"  
+    User.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"  
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
   end
 end
