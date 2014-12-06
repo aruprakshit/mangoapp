@@ -7,4 +7,4 @@
 <% @users.each do |grouping_key, users| %>
   <p> <%= grouping_key %> : <%= users.map(&:name).join("||")%></p>
 <% end %>
-
+<%= link_to "Back to Main page", root_path %>
