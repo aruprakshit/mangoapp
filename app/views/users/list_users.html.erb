@@ -1,6 +1,6 @@
 <%= form_tag list_users_users_path, :method => 'get' do %>
   <p>
-  <%= select_tag "search_by", options_for_select(@search_by_options) %>
+  <%= select_tag "search_by", options_for_select(@search_by_options, selected: params[:search_by]) %>
   <%= submit_tag "Submit"%>
   </p>
 <% end %>

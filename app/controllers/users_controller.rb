@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def list_users
-    @search_by_options = [:age, :location, :department, :designation]
+    @search_by_options = [:location, :age, :department, :designation]
     @users = User.all.group_by { |user| user.public_send(params[:search_by] || :location) }
   end
 

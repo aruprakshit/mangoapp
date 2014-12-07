@@ -26,4 +26,6 @@ ActiveRecord::Schema.define(:version => 20141206095636) do
     t.integer  "archive"
   end
 
+  add_index "users", ["archive"], :name => "index_users_on_archive"
+
 end
