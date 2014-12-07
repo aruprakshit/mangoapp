@@ -4,7 +4,7 @@
   <%= submit_tag "Submit"%>
   </p>
 <% end %>
-<% @users.each do |grouping_key, users| %>
-  <p> <%= grouping_key %> : <%= users.map(&:name).join("||")%></p>
+<% @grouped_user_names.each do |grouping_key, user_names| %>
+  <p> <%= grouping_key %> : <%= user_names %></p>
 <% end %>
 <%= link_to "Back to Main page", root_path %>

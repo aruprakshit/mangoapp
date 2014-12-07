@@ -15,4 +15,10 @@ class User < ActiveRecord::Base
       scoped
     end
   end
+
+  def self.group_users_by(grouping_attribute)
+    User.all
+        .group_by { |user| user.public_send(grouping_attribute) }
+        .map { |grouping_key, users| [grouping_key, users.map(&:name).join("||")] }
+  end
 end
