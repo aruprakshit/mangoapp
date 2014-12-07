@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
-  respond_to :html, :jsn
+  respond_to :html, :json
   
   def index
     @users = User.search(params[:search]).order(sort_column + ' ' + sort_direction)
